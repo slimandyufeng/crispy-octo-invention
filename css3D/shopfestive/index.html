@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+    content="ie=edge">
+  <title>淘宝购物节</title>
+  <style>
+    body {
+      background-image: url('./img/bg.jpg')
+    }
+
+    .container {
+      margin: 0 auto 0 auto;
+      width: 8.0625rem;
+      perspective: 25rem;
+    }
+    #box{
+    /* 转换三d模型，并沿中心点旋转 */
+	-webkit-transform-style: preserve-3d;
+	height: 100%;
+   -webkit-perspective-origin: 50% 50%;
+}
+#box > div{
+  /* 首先给一个绝对属性让其重叠起来 */
+	position: absolute;
+	width: 8.0625rem;
+	height: 73.125rem;
+	
+}
+  </style>
+</head>
+
+<body>
+  <audio id="audio">
+    <source src="./audio/bgm.mp3"
+      type="audio/mpeg">
+  </audio>
+  <div style="text-align: right; position: absolute; right: 1rem; z-index: 999"
+    id="laba">⏸</div>
+  <div class="container"
+    id="container">
+    <div id="box">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+      <div>13</div>
+      <div>14</div>
+      <div>15</div>
+      <div>16</div>
+      <div>17</div>
+      <div>18</div>
+      <div>19</div>
+      <div>20</div>
+    </div>
+  </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
