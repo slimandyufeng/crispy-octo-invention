@@ -79,8 +79,21 @@ css3开发常备核心技能
 * 自制的CON-FONT与常用字体排版
 * CSS代码检测与团队项目规范
 * CSS绘制特殊图形 高级技巧
-* BFC IFC GFC FFC
-
+### BFC IFC GFC FFC
+  > BFC  :
+  1. Box:CSS布局的基本单位
+  2. Box时CSS布局的对象和基本单位，直观点来说，就是一个页面是由很多个box组成的，元素类型和display属性，巨鼎了BOx类型。
+  3. 不同类型的box，会参与不同的formatting Context（一个决定如何渲染文档的容器），因此BOx内的元素会以不同饿方式渲染，让我门看看有哪些盒子：
+  4. block-level box:display属性为block，list-item，table的元素，会生成block-level box。并且参与block fomatting context；
+  5. inline-level box:display属性为inline,inline-block，inline-table的元素，会生成 inline-level box。并且参与inline fomatting context
+  6. Formatting context是W3C CSS2.1规范中的一个概念。他是页面中一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。最强健的Formatting context 有 Block formatting context（简称BFC）和Inline fomatting context (简称ifc)
+7. 哪些元素会生成BFC:
+跟元素
+float属性不为none
+position为absolute或fixed
+display为inline-block，table-cell，table-caption，flex，inline-flex
+overflow不为visible
+---
 ### 双飞翼布局
 
 position
