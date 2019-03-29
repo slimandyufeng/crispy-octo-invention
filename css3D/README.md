@@ -46,29 +46,36 @@ window.addEventListener("compassneedscalibration", function (event) {
 - tan=opposite/adjacent 
 - 例：tan(20)=底边/半径
 
-### 球面投影
-
-### 比较
-
-### 效果
-
-### 公式
-
-### 效果11
-
-美滋滋
-
 ### 淘宝造物节
-
 ## 集合Touch事件
 
 ## CSS高级实用技巧
 
+
 css3开发常备核心技能
 
 * 早起的双飞翼布局+CSS HACK
+  ---
+  早期的话就是用magrin,padding,浮动来解决，后期可用flex来解决这个问题。
 * 基于移动端的PX与REM转换兼容方案
 * 弹性盒模型与Reset的选择
+  ---
+  1. flex布局替代float
+  2. 弹性盒模型与reset的选择：
+    flex模型
+    *的杀伤力太大！！
+   3. Reset.css重置 Normalize.css修复 Neat.css融合
+   4. 全部使用盒子模型伪类元素需要继承父级的盒子模型。
+   > ***
+    ```css html{box-sising:border-box;}
+        *,*:before,X:after{box-sizing:inherit;}
+     ```
+     >***
+     5.辅助检查：
+    hint.css
+    csslint.net
+  
+3.css icon：http://cssicon.space/#/ （项目可以经常看看替代svg）
 * 自制的CON-FONT与常用字体排版
 * CSS代码检测与团队项目规范
 * CSS绘制特殊图形 高级技巧

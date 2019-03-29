@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+    content="ie=edge">
+  <title>双飞翼布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .left {
+      /* height: 80px; */
+      width: 100px;
+      background: red;
+      
+      /* position: relative;
+      left: -100px; */
+    }
+
+    .right {
+      /* height: 80px; */
+      width: 100px;
+      background: blue;
+      
+      /* position: relative;
+      right: -100px; */
+    }
+
+    .center {
+      background: yellow;
+      width: 100%;
+     
+    }
+
+  
+    .center {
+     flex: 1;
+    }
+    .left {
+      /* flex-grow: 3; */
+      order: 1;
+    } 
+    .right {
+      /* flex-grow: 3; */
+      order: 3;
+    }
+    .center {
+      /* flex-grow: 1; */
+      order: 2;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="center">
+      中
+    </div>
+    <div class="left">左 <p>让我撑高一下</p>
+    </div>
+    <div class="right">右</div>
+  </div>
+
+</body>
+
+</html>
