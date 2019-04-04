@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>es5核心技术</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // var a = 25;
+  //   (function() { // IIFE
+  //     // var a  ->变量提升
+  //     // 局部变量覆盖全局变量
+  //     console.log(a);
+  //     var a = 30;
+  //   })();
+  //   console.log(b)
+
+
+  // this.a = 20;
+  //  var p = {
+  //    a: 30,
+  //    test: function() {
+  //      console.info(this.a)
+  //      function s() {
+  //        this.a = 60;
+  //        console.info(this.a);
+  //      }
+  //      return s;
+  //    }
+  //  };
+  //  (p.test())();
+  //  // var s = p.test();
+  //  // s();
+
+
+  // this.a = 20;
+  // var p = {
+  //   a: 30,
+  //   test: function() {
+  //     console.info(this.a)
+  //     function s() {
+  //       this.a = 60;
+  //       console.info(this.a);
+  //     }
+  //     s();
+  //   }
+  // };
+  // p.test();
+
+
+//   this.a = 20;
+// var test = {
+//   a: 40,
+//   init: ()=> {
+//     console.info(this.a);
+//     function go() {
+//       // this.a = 60;
+//       console.info(this.a);
+//     }
+//     go.prototype.a = 50;
+//     return go;
+//   }
+// };
+// // var p = test.init();
+// // p();
+// new (test.init())();
+
+
+
+// function f1() {
+//     var N = 0;
+//     function f2() {
+//       N += 1;
+//       console.info(N);
+//     }
+//     return f2;
+//   }
+//   var result = f1();
+//   result();
+//   result();
+//   result();
+//   // result = null;
+
+
+// (function() {
+//       var a = 20;
+//       function a() {}
+//       console.info(a); // console => 20
+//   })();
+
+
+//   (function() {
+//       var a = 20;
+//       var b = c = a;
+//   })();
+//   console.info(c); // console => 20
+
+  // (function() {
+  //   function a() {
+  //     var a = 20;
+  //     var b = c = a;
+  //   }
+  // })();
+  // console.info(c); // Uncaught ReferenceError: c is not defined
+
+  // (function() {
+  //     var a = 20;
+  //     var b, c = a;
+  // })();
+  // console.info(c); // Uncaught ReferenceError: c is not defined
+
+
+//   function test() {
+//   this.a = 20;
+// }
+// test.prototype.a = 30;
+// var q = new test();
+// console.info(q.a);
+
+
+// var user = {
+//     age: 20,
+//     init: function() {
+//       console.info(this.age);
+//     }
+//   }
+//   var data = {age: 40};
+//   var u = user.init.bind(data);
+//   u();
+
+
+// var bo = 10;
+// var foo = function () {
+//   console.log(bo);
+// }
+// foo();
+
+// (function() {
+//   var bo = 20;
+//   foo();
+// })()
+
+// (function (func) {
+//   var bo = 30;
+//   func();
+// })(foo)
+var car = function (color) {
+    this.color = color
+    console.log(111);
+    
+}
+car.prototype.sail = function() {
+  console.info(this.color,222)
+}
+var bmw = function(color) {
+  car.call(this,color)
+}
+// bmw.prototype = new car()
+// var m = new bmw('red')
+// console.log(new car());
+var __pro = Object.create(car.prototype)
+__pro.constructor = bmw;
+bmw.prototype = __pro;
+var m = new bmw('red')
+console.log(m)
+
+</script>
+</html>
