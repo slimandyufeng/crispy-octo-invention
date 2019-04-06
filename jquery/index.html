@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+    content="ie=edge">
+  <title>jquery内幕</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // (function (window, undefined) {
+  //   // undefined 在外面是关键字，在里面就是undefined变量
+  //   undefined = 42;
+  //   alert(42) // 42
+  // })(window);
+  // undefined = 42;
+  // alert(undefined); // undefined;
+
+
+  function addMethod(obj, name, f) {
+  var old = obj[name];
+  obj[name] = function() {
+    if (f.length === arguments.length) {
+      return f.apply(this, arguments)
+    } else {
+      return old.apply(this, arguments)
+    }
+  }
+}
+
+var people = {
+  name: ['张三', '李四', '王二麻']
+};
+
+var find0 = function() {
+  console.log('金皮')
+  return this.name;
+};
+
+var find1 = function(name){
+  console.log(this.name.indexOf(name));
+  
+}
+
+addMethod(people, 'find', find0);
+addMethod(people, 'find', find1);
+people.find();
+people.find('李四')
+
+//   var s = {
+//   a: function(argument) {
+//     console.log("first");
+//     return this
+//   },
+//   b: function(argument) {
+//     console.log("two");
+//     return this
+//   },
+//   c: function(argument) {
+//     console.log("three");
+//     return this
+//   }
+// };
+
+// s.a().b().c();
+</script>
+
+</html>
